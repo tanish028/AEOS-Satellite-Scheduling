@@ -144,7 +144,7 @@ def generate_problem(n_targets=80, n_satellites=2, horizon=1440):
 
 
 
-# SECTION 2: CORE PHYSICS — Trans(i, j, k)
+#  PHYSICS — Trans(i, j, k)
 
 #  After observing target i, the satellite must
 #  physically rotate its body to point at target j. The time required depends
@@ -216,7 +216,7 @@ def compute_obs_start(tp_ik, i, k, data):
 
 
 
-# SECTION 3: SOLUTION REPRESENTATION
+# SOLUTION REPRESENTATION
 
 # "A 'schedule' is represented as a dictionary mapping orbit k to an ordered
 #  list of (target_id, TPᵢₖ) pairs. This directly encodes both decision
@@ -258,7 +258,7 @@ class Schedule:
 
 
 
-# SECTION 4: FEASIBILITY CHECKING
+#  FEASIBILITY CHECKING
 
 # "Before accepting any target into the schedule we check all 5 constraints
 #  from the paper. If any constraint is violated, xᵢₖ = 0 for that assignment.
@@ -357,9 +357,7 @@ def check_feasibility(i, k, tp_new, schedule, data):
 
 
 
-# SECTION 5: OBJECTIVE FUNCTION — Monte Carlo Profit Evaluation
-
-# "This is the heart of the uncertainty handling from Section III of the paper.
+#  OBJECTIVE FUNCTION — Monte Carlo Profit Evaluation
 #  Instead of maximizing Σ ωᵢ·xᵢₖ (deterministic), we maximize the confidence
 #  profit f = the profit achieved in at least 90% of cloud scenarios.
 #  We implement this via Monte Carlo: sample n_scenarios random cloud
@@ -415,7 +413,7 @@ def deterministic_profit(schedule, data):
     return profit
 
 
-# SECTION 6: SELECTION RULES — Needᵢ and CFᵢₖ
+# SELECTION RULES — Needᵢ and CFᵢₖ
 
 # "Before inserting targets we rank them by urgency and rank
 #  orbits by conflict level. This greedy initialization gives
@@ -477,7 +475,7 @@ def compute_conflict(i, k, schedule, data):
 
 
 
-# SECTION 7: GREEDY INITIAL SOLUTION
+# GREEDY INITIAL SOLUTION
 
 # "We build the initial solution by repeatedly picking the highest-Need
 #  target and inserting it on its lowest-conflict orbit. This is the
@@ -535,7 +533,7 @@ def build_initial_solution(data):
 
 
 
-# SECTION 8: PERTURBATION — Delete and Reinsert
+# PERTURBATION — Delete and Reinsert
 
 
 #  We randomly remove γ×|schedule|
@@ -592,7 +590,7 @@ def perturb_and_reinsert(schedule, data, gamma=0.10):
 
 
 
-# SECTION 9: IMPROVED SIMULATED ANNEALING (ISA)
+#  IMPROVED SIMULATED ANNEALING (ISA)
 
 # "The outer loop controls temperature cooling.
 #  The inner loop (Markov chain) explores at a fixed temperature.
@@ -731,7 +729,7 @@ def run_isa(data,
 
 
 
-# SECTION 10: GREEDY BASELINE (for comparison)
+# GREEDY BASELINE (for comparison)
 
 # "We compare ISA against a simple greedy algorithm that just inserts
 #  targets in order of decreasing profit × probability, without any
@@ -778,7 +776,7 @@ def run_greedy(data):
 
 
 
-# SECTION 11: VISUALISATION
+#  VISUALISATION
 
 
 # "We produce three plots: (1) convergence curve showing how ISA profit
@@ -916,7 +914,7 @@ def plot_temperature(history):
     plt.close()
     print("  Saved: sa_dynamics.png")
 
-# MAIN — Run everything
+
 
 if __name__ == "__main__":
     print("="*60)
