@@ -103,10 +103,10 @@ FINAL RESULTS
 ### Generate all 4 result plots
 
 ```bash
-python generate_plots.py
+python comparison_plots.py
 ```
 
-This runs ISA 13 times across different configurations and saves 4 PNG files. Takes approximately 5–10 minutes. To make it faster, open `generate_plots.py` and reduce `N_FM = 50` to `N_FM = 30`.
+This runs ISA 13 times across different configurations and saves 4 PNG files. Takes approximately 5–10 minutes. To make it faster, open `comparison_plots.py` and reduce `N_FM = 50` to `N_FM = 30`.
 
 
 ## Key Parameters
