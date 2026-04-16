@@ -12,7 +12,7 @@ Implementation of a Simulated Annealing based heuristic for scheduling Agile Ear
 ## Team
 
 | Name                 |Roll Number  |
-
+|----------------------|-------------|
 | Tanish Anand         | 240150037 |
 | Tumu Sai Seshi Kiran | 240150038 |
 | Rathod Ravi Kiran    | 240150029 |
@@ -114,7 +114,7 @@ This runs ISA 13 times across different configurations and saves 4 PNG files. Ta
 These can be changed at the bottom of `Satellite.py` in the `run_isa()` call:
 
 | Parameter      |Default|   Meaning |
-
+|----------------|-------|-----------|
 | `n_targets`    | 80    | Number of ground targets |
 | `n_satellites` | 2     | Number of satellites (each makes 14 orbits/day) |
 | `T0`           | 100.0 | Initial SA temperature |
@@ -128,8 +128,8 @@ These can be changed at the bottom of `Satellite.py` in the `run_isa()` call:
 
 ## Paper Equations Implemented
 
-| Function                       | Equation | Description |
-
+| Function                       | Equation  | Description |
+|--------------------------------|-----------|-------------|
 | `compute_trans(i, j, k)`       | Eq. 3     | Rotation time between consecutive targets |
 | `compute_slew_energy(i, j, k)` | Eq. 4     | Energy consumed during attitude maneuver |
 | `compute_obs_start(tp, i, k)`  | Eq. 1     | Observation start time from TPik variable |
@@ -187,7 +187,7 @@ No public benchmark dataset exists for this problem. We follow the same distribu
 Our implementation produces results qualitatively consistent with the paper. ISA consistently outperforms the greedy baseline across all tested instance sizes.
 
 | Instance      | Greedy profit f | ISA profit f | Improvement |
-
+|---------------|-----------------|--------------|-------------|
 | n=50 targets  | ~120            | ~170         | ~39% |
 | n=75 targets  | ~190            | ~265         | ~39% |
 | n=100 targets | ~245            | ~290         | ~18% |
