@@ -1,13 +1,4 @@
 """
-=============================================================================
-AEOS Scheduler
-Simulated Annealing Based Scheduling of Agile Earth Observation Satellites
-Under Cloud Coverage Uncertainty
-=============================================================================
-Based on: Han et al., IEEE TSMC: Systems
-Course:   DA 243 — Introduction to Optimization
-
-
 "We implemented the core ideas from the paper in Python. We simplified
 orbital mechanics (using random VTWs instead of real orbits) but kept
 the optimization structure identical: binary assignment variables xik,
