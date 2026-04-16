@@ -188,9 +188,9 @@ Our implementation produces results qualitatively consistent with the paper. ISA
 
 | Instance      | Greedy profit f | ISA profit f | Improvement |
 |---------------|-----------------|--------------|-------------|
-| n=50 targets  | ~120            | ~170         | ~39% |
-| n=75 targets  | ~190            | ~265         | ~39% |
-| n=100 targets | ~245            | ~290         | ~18% |
+| n=50 targets  | 87.3            | 123.9         | 41.9% |
+| n=75 targets  | 154.2           |   191.3     | 24.1% |
+| n=100 targets | 195.0            | 290.5        | 49.0% |
 
 *. Results will vary on the basis of randon seed chosen and ISA parameters.*
 
