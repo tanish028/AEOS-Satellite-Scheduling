@@ -192,7 +192,7 @@ Our implementation produces results qualitatively consistent with the paper. ISA
 | n=75 targets  | ~190            | ~265         | ~39% |
 | n=100 targets | ~245            | ~290         | ~18% |
 
-*Exact values vary by run. Results will depend on randon seed chosen and ISA parameters.*
+*. Results will vary on the basis of randon seed chosen and ISA parameters.*
 
 **Key finding:** γ=0.10 (deleting 10% of targets per perturbation) gives the best balance between exploration and exploitation, consistent with the paper's conclusion.
 
