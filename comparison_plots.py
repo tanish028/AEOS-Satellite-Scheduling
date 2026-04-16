@@ -1,8 +1,5 @@
 """
-
 generate_plots.py
-
-
        isa_vs_greedy.png      — ISA vs Greedy bar chart (n=50, 75, 100)
        gamma_analysis.png     — Effect of gamma=0.05, 0.10, 0.20
        mc_distribution.png    — Monte Carlo profit histogram
@@ -35,9 +32,9 @@ from Satellite import (
 )
 
 SAVE_DIR          = os.path.dirname(os.path.abspath(__file__))
-N_FM              = 50    # ISA outer iterations (reduce to 30 for faster run)
+N_FM              = 50    # ISA outer iterations (we can reduce it to 30 for faster run)
 N_SCENARIOS_ISA   = 20    # MC scenarios used DURING ISA
-N_SCENARIOS_FINAL = 93    # MC scenarios for final histogram (|W| = 93)
+N_SCENARIOS_FINAL = 93   
 SEED              = 42
 
 
@@ -255,7 +252,7 @@ def plot_gamma_analysis():
 
 # Monte Carlo profit distribution histogram
 # Shows all |W| individual scenario profits.
-# The red vertical line marks f = 10th percentile (the  CCP objective).
+# The red vertical line shows f = 10th percentile (the  CCP objctive).
 
 
 def plot_mc_distribution():
