@@ -11,7 +11,7 @@ Total runtime is ~5-10 minutes because ISA runs 13 times.
 import os
 import time
 
-from plots import (
+from plots.comparison import (
     plot_gamma_analysis,
     plot_isa_vs_greedy,
     plot_mc_distribution,

@@ -55,13 +55,13 @@ AEOS-Satellite-Scheduling/
 │
 ├── plots/                       # Comparison plot generation
 │   ├── __init__.py
+│   ├── __main__.py              # Entry point: python -m plots
+│   ├── run.py                   # Orchestrates all 4 comparison plots
 │   ├── config.py                # Plot styling and experiment constants
 │   ├── experiments.py           # Single-run experiment helpers
-│   └── comparison.py              # Four analysis plot functions
+│   └── comparison.py            # Four analysis plot functions
 │
-├── main.py                      # Primary entry point (ISA + greedy)
-├── comparison_plots.py          # Generate all 4 comparison plots
-├── Satellite.py                 # Backward-compatible wrapper
+├── main.py                      # Entry point: ISA + greedy scheduler
 ├── requirements.txt
 ├── README.md
 │
@@ -100,12 +100,6 @@ pip install numpy matplotlib scipy
 python main.py
 ```
 
-Or using the legacy entry point:
-
-```bash
-python Satellite.py
-```
-
 This will:
 1. Generate a synthetic problem with 80 targets and 2 satellites
 2. Run the greedy baseline
@@ -140,7 +134,7 @@ FINAL RESULTS
 ### Generate all 4 comparison plots
 
 ```bash
-python comparison_plots.py
+python -m plots
 ```
 
 This runs ISA 13 times across different configurations and saves 4 PNG files to `results/`. Takes approximately 5–10 minutes. To make it faster, open `plots/config.py` and reduce `N_FM = 50` to `N_FM = 30`.
@@ -179,6 +173,7 @@ Default ISA parameters are set in `main.py`. Comparison plot settings are in `pl
 | `aeos/isa.py` | Full ISA loop with Metropolis acceptance (Eq. 18) |
 | `aeos/visualization.py` | Convergence, Gantt, and comparison plots |
 | `plots/comparison.py` | Parameter sensitivity and resource analysis plots |
+| `plots/run.py` | Runs all four comparison experiments and saves PNGs |
 
 ---
 
